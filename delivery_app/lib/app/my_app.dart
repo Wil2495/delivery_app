@@ -1,4 +1,6 @@
-import 'package:delivery_app/app/views/login/login_view.dart';
+import 'package:delivery_app/app/themes/colors/colors.dart';
+import 'package:delivery_app/app/ui/routes/app_routes.dart';
+import 'package:delivery_app/app/ui/views/login/login_view.dart';
 import 'package:flutter/material.dart';
 
 class MyApp extends StatelessWidget {
@@ -6,8 +8,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Login(),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+          //scaffoldBackgroundColor: ColorsApp.colorPrincipalApp,
+          primarySwatch: ColorsApp.colorPrincipalApp),
+      home: const LoginView(),
+      routes: appRoutes,
     );
   }
 }
